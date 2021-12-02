@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./res/img/tms_favicon.ic.png" />
+    <meta property="og:title" content="TMS Corporation" />
+    <meta property="og:image" content="./res/img/tms_thumb.png" />
+    <meta property="og:description" content="(주)티엠솔루션스 회사소개" />
+    <meta property="og:url" content="www.tmscorp.co.kr" />
+    <meta property="og:site_name" content="TMS Corporation">
+    <meta property="og:type" content="website">
+    <meta name="title" content="TMS Corporation">
+    <meta name="description" content="(주)티엠솔루션스 회사소개">
+    <meta name="keywords" content="티엠,티엠솔루션스,태양광,태양광에너지,태양광발전소,태양광컨설팅,신재생에너지,친환경에너지">
+    <meta name="author" content="TMS Corporation">
+    <meta name="naver-site-verification" content="c2da838378af2d1f9ea8664b85d78febc1e445d2" />
+    <script
+      src="https://kit.fontawesome.com/f6d29b58d3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
+    <title>TMS Corporation</title>
+
+    <script defer>
+      $(function () {
+        // navbar
+        $('.yet').click(function () {
+          alert('준비중입니다.');
+        });
+
+        $('.ic_sns-blog').mouseenter(function () {
+          $(this)
+            .children('img')
+            .attr('src', './res/img/tms_ic_blog_hover.png');
+        });
+        $('.ic_sns-blog').mouseleave(function () {
+          $(this).children('img').attr('src', './res/img/tms_ic_blog.png');
+        });
+        $('.ic_sns-band').mouseenter(function () {
+          $(this)
+            .children('img')
+            .attr('src', './res/img/tms_ic_band_hover.png');
+        });
+        $('.ic_sns-band').mouseleave(function () {
+          $(this).children('img').attr('src', './res/img/tms_ic_band.png');
+        });
+        $('.wrap_navbar_menu').click(function(){
+          $(this).css({'width':'100%', 'overflow': 'visible'});
+          $('.navbar_menu').css('display', 'block');
+        }); 
+        $('.wrap_navbar_menu').mouseleave (function(){
+          $(this).css({'width':'72px', 'overflow': 'hidden'});
+          $('.navbar_menu').css('display', 'none');
+        });
+        $('body').touchstart(function(){ 
+          $('.wrap_navbar_menu').css({'width':'72px', 'overflow': 'hidden'});
+          $('.navbar_menu').css('display', 'none');
+        });
+      });
+    </script>
+
+    <style>
+      @font-face {
+        font-family: 'scDream-2';
+        src: url(./res/font/SCDream2.otf);
+      }
+      @font-face {
+        font-family: 'scDream-3';
+        src: url(./res/font/SCDream3.otf);
+      }
+      @font-face {
+        font-family: 'scDream-4';
+        src: url(./res/font/SCDream4.otf);
+      }
+      @font-face {
+        font-family: 'scDream-5';
+        src: url(./res/font/SCDream5.otf);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: scDream-3, sans-serif;
+      }
+      a,
+      a:visited {
+        color: #000;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+      body {
+        overflow-x: hidden;
+      }
+      /* s: header */
+      .logo {
+        height: 40px;
+      }
+      .header_inner .logo {
+        position: absolute;
+        top: 30px;
+      }
+      header {
+        width: 100%;
+        height: 600px;
+        color: #fff;
+        background: no-repeat center url(./res/img/tms_header.jpg);
+        background-size: cover;
+      }
+      .header_gradient-top {
+        width: 100%;
+        height: 600px;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 2, 16, 1) 0%,
+          rgba(0, 2, 16, 0) 40%
+        );
+      }
+      .header_gradient-btm {
+        width: 100%;
+        height: 600px;
+        background: linear-gradient(
+          45deg,
+          rgba(0, 2, 16, 1) 0%,
+          rgba(0, 2, 16, 0) 60%
+        );
+        position: absolute;
+        top: 0;
+      }
+      .header_inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+      }
+      .navbar {
+        min-width: 960px;
+        max-width: 1600px;
+        padding: 0 120px;
+        margin: auto;
+        height: 100px;
+        display: flex;
+        align-items: center;
+      }
+      .wrap_navbar_menu {
+        margin: auto;
+      }
+      .navbar_menu {
+        display: flex;
+        margin: auto;
+      }
+      .navbar_menu-item {
+        width: 180px;
+        margin: 0 12px;
+        text-align: center;
+      }
+      .navbar a,
+      .navbar a:visited {
+        color: #fff;
+      }
+      .navbar a:hover {
+        color: #eb5f08;
+      }
+      .ic_menu {
+        display: none;
+      }
+      .slogan {
+        min-width: 960px;
+        max-width: 1600px;
+        padding: 0 120px;
+        margin: 0 auto;
+        font-size: 28px;
+        margin-top: 160px;
+      }
+      .slogan div {
+        margin-bottom: 20px;
+      }
+      .slogan div p {
+        font-family: scDream-4, sans-serif;
+        line-height: 40px;
+      }
+      .slogan > p {
+        font-family: scDream-2, sans-serif;
+        font-size: 24px;
+      }
+      /* e: header */
+      /* s: shortcut */
+      #shortcut {
+        min-width: 960px;
+        max-width: 1600px;
+        margin: auto;
+        padding: 100px 120px;
+      }
+      .shortcut_inner {
+        display: flex;
+        justify-content: center;
+      }
+      #shortcut a,
+      #shortcut a:visited {
+        color: 000;
+      }
+      .wrap_shortcut {
+        margin: 40px 12px 0;
+        width: calc(100% /3);
+        border: 1px solid #ddd;
+        cursor: pointer;
+        background-size: cover;
+        color: #000;
+        position: relative;
+        overflow: hidden;
+      }
+      .wrap_shortcut:first-child {
+        margin-left: 0;
+      }
+      .wrap_shortcut:last-child {
+        margin-right: 0;
+      }
+      .shortcut_img {
+        overflow: hidden;
+        font-size: 0;
+      }
+      .shortcut_img img {
+        width: 100%;
+        transform: scale(1);
+        transition: transform .3s ease-in;
+      }
+      .shortcut_img img:hover {
+        transform: scale(1.1);
+      }
+      .shortcut_data {
+        padding: 24px 32px 32px;
+        height: 100%;
+      }
+      .shortcut_tit {
+        font-size: 18px;
+        /* color: #fff; */
+        font-family: scDream-5, sans-serif;
+        margin-bottom: 16px;
+      }
+      .shortcut_desc {
+        font-size: 14px;
+        /* color: #ffffffcc; */
+        line-height: 24px;
+      }
+      .shortcut_tit img {
+        width: 28px;
+        height: 28px;
+        margin-left: 12px;
+        margin-bottom: -7px;
+      }
+      /* e: shortcut */
+      /* s: media */
+      .media {
+        min-width: 960px;
+        max-width: 1600px;
+        padding: 0 120px;
+        margin: 0 auto 160px;
+        overflow: hidden;
+      }
+      .media_wrap {
+        margin-top: 40px;
+        overflow-x: scroll;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 60px;
+      }
+      .media_wrap::-webkit-scrollbar {
+        height: 4px;
+        background-color: #e5e5e5;
+      }
+      .media_wrap::-webkit-scrollbar-thumb {
+        background-color: #eb5f08;
+        border-radius: 2px;
+      }
+      .media_wrap::-webkit-scrollbar-track {
+        background-color: #e5e5e5;
+        border-radius: 2px;
+      }
+      .media_inner {
+        width: 100%;
+        display: flex;
+      }
+      .media_tit {
+        font-size: 24px;
+        font-family: scDream-4, sans-serif;
+        display: flex;
+        align-items: center;
+      }
+      .media_tit a {
+        display: inline-block;
+        margin-left: 18px;
+        width: 26px;
+        height: 26px;
+        border: 1px solid #eb5f08;
+        border-radius: 14px;
+      }
+      .media_tit img {
+        width: 18px;
+        height: 18px;
+        padding: 4px;
+      }
+      .media_ctn {
+        min-width: 282px;
+        height: 282px;
+        margin-right: 24px;
+        overflow: hidden;
+        position: relative;
+      }
+      .media_ctn:last-child {
+        margin-right: 0;
+      }
+      .media_data {
+        padding: 20px;
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        color: #fff;
+      }
+      .media_data_tit {
+        margin-bottom: 12px;
+        line-height: 24px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .media_data_date {
+        font-size: 13px;
+        font-family: scDream-2, sans-serif;
+      }
+      .img_w {
+        width: 100%;
+      }
+      .img_h {
+        height: 100%;
+      }
+      .media_ctn_gradient {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.5) 0%,
+          rgba(0, 0, 0, 0) 60%
+        );
+        position: absolute;
+        bottom: 0;
+      }
+      /* e: media */
+      /* s: news */
+      #news {
+        margin-bottom: 40px;
+      }
+      #news.media {
+        overflow: unset;
+      }
+      #news .media_wrap {
+        overflow-x: unset;
+        display: flex;
+      }
+      .news_main {
+        border-right: 1px solid #ddd;
+        max-width: 70%;
+        min-width: 720px;
+      }
+      .news_main .media_ctn {
+        height: 300px;
+      }
+      #news .media_ctn {
+        display: flex;
+      }
+      #news .media_data {
+        position: unset;
+        color: #000;
+      }
+      .news_main .media_data {
+        padding: 12px 32px;
+      }
+      .news_sub .media_data {
+        padding: 12px 0;
+      }
+      #news .media_data_tit {
+        font-family: scDream-5, sans-serif;
+      }
+      .news_main .media_data_tit {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+      .news_sub .media_data_tit {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+      #news .media_data_date {
+        font-size: 14px;
+        color: #444;
+        position: absolute;
+        bottom: 10px;
+      }
+      .news_main .media_data_desc {
+        line-height: 26px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        color: #444;
+      }
+      .news_sub .media_data_desc {
+        font-size: 14px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        color: #444;
+      }
+      .news_sub {
+        padding-left: 32px;
+        max-width: 30%;
+      }
+      .news_sub .media_ctn {
+        min-width: unset;
+        height: 149px;
+        border-bottom: 1px solid #ddd;
+        margin-right: 0;
+      }
+      .news_sub .media_ctn:last-child {
+        border: 0;
+      }
+      .news_sub img {
+        display: none;
+      }
+      /* e: news */
+      /* s: footer */
+      footer {
+        padding: 0 120px;
+        margin: auto;
+        clear: both;
+        background: #333;
+        color: #e5e5e5;
+      }
+      .footer_inner {
+        min-width: 960px;
+        max-width: 1600px;
+        margin: auto;
+      }
+      .footer_inner > div {
+        font-size: 12px;
+      }
+      footer a,
+      footer a:visited {
+        color: #e5e5e5;
+        margin-right: 24px;
+      }
+      .wrap_sns a,
+      .wrap_sns a:visited {
+        margin-right: 0;
+        margin-left: 24px;
+      }
+      .footer_top, .footer_bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+      }
+      .footer_bottom {
+        border-top: 1px solid #575757;
+      }
+      .footer_top span, .copyrt {
+        color: #8c8c8c;
+        margin-right: 24px;
+      }
+      .footer_top span:last-child {
+        margin-right: 0;
+      }
+      .footer_right {
+        display: flex;
+      }
+      .company_info p {
+        font-family: scDream-2, sans-serif;
+        line-height: 24px;
+        margin-left: -210px;
+      }
+      .wrap_ft_shortcut {
+        position: relative;
+        font-size: 13px;
+        margin-left: 24px;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      .wrap_ft_shortcut:hover {
+        overflow: visible;
+      }
+      .ft_shortcut {
+        font-family: scDream-3, sans-serif;
+        line-height: 13px;
+        padding: 10px 20px;
+        border: 1px solid #575757;
+        cursor: pointer;
+      }
+      .ft_shortcut i {
+        margin-left: 10px;
+      }
+      .ft_shortcut_dropdown {
+        position: absolute;
+        top: -116px;
+        right: 0;
+        border: 1px solid #575757;
+        opacity: 1;
+        transition: top opacity 0.1s ease-in;
+        z-index: 5;
+      }
+      .ft_shortcut_dropdown a,
+      .ft_shortcut_dropdown a:visited {
+        display: inline-block;
+        width: 152.5px;
+        text-align: center;
+        padding: 10px 0;
+        margin-right: 0;
+        background: #fff;
+        color: #333;
+        font-family: scDream-4, sans-serif;
+      }
+      .ft_shortcut_dropdown a:hover {
+        background: #e5e5e5;
+      }
+      /* e: footer */
+      /* for below 768px screen width */
+      @media screen and (max-width: 768px) {
+        header,
+        .header_gradient-top,
+        .header_gradient-btm {
+          height: 400px;
+        }
+        header {
+          overflow: hidden;
+          min-width: calc(100% - 64px);
+          position: relative;
+        }
+        .header_inner .logo {
+          position: unset;
+        }
+        .navbar {
+          min-width: 100%;
+          padding: 0;
+          flex-direction: column;
+          position: fixed;
+          top: 0;
+        }
+        .navbar > a {
+          padding: 16px 32px;
+          font-size: 0;
+          display: block;
+          min-width: calc(100% - 64px);
+          text-align: left;
+          background-color: #000316;
+          cursor: auto;
+        }
+        .ic_menu {
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 28px 32px;
+        }
+        .wrap_navbar_menu {
+          margin: 0 auto;
+          width: 72px;
+          height: 72px;
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+        .wrap_navbar_menu:hover {
+          width: 100%;
+          overflow: visible;
+        }
+        .navbar_menu {
+          display: none;
+          flex-direction: column;
+          background-color: rgba(0, 3, 22, .8);
+          width: 100%;
+          position: absolute;
+          top: 72px;
+          right: 0;
+        }
+        .navbar_menu-item {
+          width: 100%;
+          padding: 16px 0;
+          margin-left: 0;
+        }
+        .navbar a,
+        .navbar a:visited {
+          color: #fff;
+        }
+        .navbar a:hover {
+          color: #fff;
+        }
+        .navbar_menu-item:hover {
+          background-color: rgba(235, 95, 8, .8);
+        }
+        .slogan {
+          min-width: calc(100% - 64px);
+          padding: 0 32px;
+          font-size: 24px;
+          margin-top: 160px;
+        }
+        .slogan div p {
+          line-height: 36px;
+        }
+        .slogan > p {
+          font-size: 18px;
+        }
+        #shortcut {
+          min-width: calc(100% - 64px);
+          padding: 60px 32px;
+          display: block;
+        }
+        .shortcut_inner {
+          flex-direction: column;
+        }
+        .wrap_shortcut {
+          width: 100%;
+          margin: 0;
+          margin-bottom: 12px;
+        }
+        .wrap_shortcut:first-child {
+          margin-top: 40px;
+        }
+        .media {
+          min-width: calc(100% - 64px);
+          padding: 24px 32px;
+          margin-bottom: 100px;
+        }
+        #news .media_wrap {
+          flex-direction: column;
+          padding: 0;
+        }
+        .news_main .media_ctn {
+          height: 100%;
+        }
+        #news .media_ctn {
+          display: unset;
+        }
+        .news_img {
+          width: 100%;
+        }
+        .news_main {
+          flex-direction: column;
+          min-width: 100%;
+          border-right: 0;
+          border-bottom: 1px solid #ddd;
+        }
+        .news_main .media_data {
+          padding: 24px 0;
+        }
+        .news_sub {
+          min-width: 100%;
+          padding: 0;
+        }
+        .news_sub .media_data {
+          padding: 24px 0;
+          border-bottom: 1px solid #ddd;
+        }
+        #news .media_data_date {
+          position: unset;
+          margin-top: 12px;
+        }
+        footer {
+          padding: 0 32px;
+          text-align: center;
+        }
+        .footer_inner {
+          min-width: calc(100% - 64px);
+        }
+        .footer_top {
+          display: block;
+          text-align: center;
+        }
+        .footer_left span {
+          margin-right: 0;
+        }
+        .footer_top > a {
+          margin-right: 0;
+        }
+        footer .logo {
+          padding: 0;
+          margin-bottom: 12px;
+        }
+        .footer_right > div {
+          margin-left: 0;
+          float: left;
+        }
+      }
+      @media screen and (max-width: 690px) {
+        .company_info {
+          display: block;
+        }
+        .footer_top span, .copyrt {
+          margin-right: 0;
+          margin-bottom: 4px;
+        }
+        .copyrt {
+          margin-bottom: 12px;
+        }
+        .footer_top span:last-child {
+          margin-bottom: 0;
+        }
+      }
+      @media screen and (max-width: 670px) {
+        .footer_bottom {
+          flex-direction: column;
+        }
+      }
+      @media screen and (max-width: 400px) {
+        #shortcut {
+          min-width: calc(100% - 32px);
+          padding: 60px 16px;
+        }
+        .media {
+          min-width: calc(100% - 32px);
+          padding: 16px;
+        }
+        footer {
+          padding: 0 24px;
+        }
+        .footer_inner {
+          min-width: calc(100% - 32px);
+        }
+        .slogan {
+          min-width: calc(100% - 32px);
+          padding: 0 16px;
+          margin-top: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header_inner">
+        <div class="navbar">
+          <i class="fas fa-bars ic_menu"></i>
+          <a href=""><img class="logo" src="./res/img/tms_logo_white.svg" /></a>
+          <div class="wrap_navbar_menu">
+            <ul class="navbar_menu">
+              <li class="navbar_menu-item yet">
+                <a href="" target="_blank"
+                  >티엠솔루션스</a
+                >
+              </li>
+              <li class="navbar_menu-item yet"><a href="#">사업분야</a></li>
+              <li class="navbar_menu-item yet"><a href="#">미디어</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="slogan">
+          <div>
+            <p>기본과 원칙을 준수하고, 최고의 품질과 서비스를</p>
+            <p>공급하는 것을 원칙으로 합니다.</p>
+          </div>
+          <p>티엠솔루션스</p>
+        </div>
+      </div>
+      <div class="header_gradient-top"></div>
+      <div class="header_gradient-btm"></div>
+    </header>
+    <section id="shortcut">
+      <p class="media_tit">
+        사업분야 <a class="yet" href=""><img src="./res/img/tms_ic_plus.png" /></a>
+      </p>
+      <div class="shortcut_inner">
+        <div class="wrap_shortcut energy">
+            <a href="https://tms-energy.co.kr/" target="_blank">
+              <div class="shortcut_img">
+                <img src="./res/img/tms_shortcut_energy.png" />
+              </div>
+              <div class="shortcut_data">
+                <p class="shortcut_tit">TMS-신재생 에너지<img src="./res/img/tms_ic_arrow_01.png" /></p>
+                <p class="shortcut_desc">
+                  1:1 맞춤형 신재생에너지 비즈니스 플랫폼
+                </p>
+              </div>
+            </a>
+        </div>
+        <div class="wrap_shortcut ansys yet">
+            <a href="">
+              <div class="shortcut_img">
+                <img src="./res/img/tms_shortcut_ansys.png" />
+              </div>
+              <div class="shortcut_data">
+                <p class="shortcut_tit">ANSYS 솔루션<img src="./res/img/tms_ic_arrow_01.png" /></p>
+                <p class="shortcut_desc">
+                  구조해석 · 열유체해석 · 전자기장해석의 No.1 솔루션
+                </p>
+              </div>
+            </a>
+        </div>
+        <div class="wrap_shortcut interior yet">
+            <a href="">
+              <div class="shortcut_img">
+                <img src="./res/img/tms_shortcut_interior.png" />
+              </div>
+              <div class="shortcut_data">
+                <p class="shortcut_tit">인테리어 플랫폼<img src="./res/img/tms_ic_arrow_01.png" /></p>
+                <p class="shortcut_desc">
+                  아름다운 공간설계의 시작 '브리드홈'
+                </p>
+              </div>
+            </a>
+        </div>
+      </div>
+    </section>
+    <section class="media" id="news">
+      <p class="media_tit">
+        뉴스 <a class="yet" href=""><img src="./res/img/tms_ic_plus.png" /></a>
+      </p>
+      <div class="media_wrap">
+        <div class="news_main">
+          <a
+            href="http://www.gasnews.com/news/articleView.html?idxno=93055"
+            target="_blank"
+            class="media_ctn"
+          >
+            <img class="news_img" src="./res/img/tms_media_1.jpeg" />
+            <div class="media_data">
+              <p class="media_data_tit">
+                '원천 공기업' 한수원, 동국제강 당진 공장에 13MW급 태양광 세운다.
+              </p>
+              <p class="media_data_desc">
+                [가스신문=주병국 기자] 한국수력원자력(사장 정재훈)이 28일
+                동국제강㈜, ㈜티엠솔루션스, ㈜효성중공업, ㈜에스에너지와
+                동국제강 당진공장 13㎿급 태양광발전사업 공동개발 양해각서(MOU)를
+                체결했다. 이날 체결식은 코로나19로 인해 서면으로 진행됐으며,
+                이인식 한수원 그린에너지본부장, 김지탁 동국제강 당진공장장,
+                정태철 티엠솔루션스 대표이사, 유호재 효성중공업 국내영업총괄
+                본부장, 박상민 에스에너지 대표이사 등 관계자들이 참여했다.
+              </p>
+              <p class="media_data_date">2020.09.29</p>
+            </div>
+          </a>
+        </div>
+        <div class="news_sub">
+          <a
+            href="https://www.snmnews.com/news/articleView.html?idxno=460344"
+            target="_blank"
+            class="media_ctn"
+          >
+            <img src="./res/img/tms_media_1.jpeg" />
+            <div class="media_data">
+              <p class="media_data_tit">
+                티엠솔루션스, 지붕만 있으면 고수익 창출 태양광 솔루션
+              </p>
+              <p class="media_data_desc">
+                티엠솔루션스(대표 정태철)가 철강·비철금속업체들의 놀고 있는 공장 지붕에서 고수익을 창출할 수 있는 방안을 제시하면서 주목을 받고 있다.
+                티엠솔루션스는 태양광 발전 토탈 솔루션을 제공하는 업체로 철강금속업체들의 공장 지붕에 임대형 태양광발전사업을 통해 서로 윈윈할 수 있는 방안을 내놓고 있다.
+                지붕 임대형 태양광발전사업은 지붕 위에 태양광발전사업자가 전액 투자·시공·운영한다. 사업자는 건물주에게 임대료를 20년간 고정적으로 지급하고 20년 뒤에는 건물주에게 무상 양도하는 1:1 맞춤형 수익창출 프로그램이다.
+                티엠솔루션스가 이를 철강금속업체들에게도 알리고 적용할 수 있도록 맞춤 서비스를 제공하고 있다.
+              </p>
+              <p class="media_data_date">2020.02.26</p>
+            </div>
+          </a>
+          <a
+            href="http://www.epj.co.kr/news/articleView.html?idxno=22993"
+            target="_blank"
+            class="media_ctn"
+          >
+            <img src="./res/img/tms_media_1.jpeg" />
+            <div class="media_data">
+              <p class="media_data_tit">
+                남동발전, 한양대학교에 100kWp 태양광 설치
+              </p>
+              <p class="media_data_desc">
+                [일렉트릭파워 배상훈 기자]한국남동발전(사장 유향열)은 9월 17일 탑선, 윌링스, 주은코퍼레이션, 티엠솔루션스와 함께 한양대학교 에리카캠퍼스에서 태양광설비 설치협약을 체결했다.
+                이번 사업은 남동발전 햇빛나눔 사회공헌활동인 써니 플랜트(Sunny Plant) 일환으로 진행되는 사업이다.
+                탑선, 윌링스, 주은코퍼레이션, 티엠솔루션스 등 중소기업은 태양광 기자재와 설계·인허가를 무상 기부한다. 남동발전은 시공비를 지원한다. 이를 바탕으로 한양대학교 에리카캠퍼스 건물옥상에 100kWp급 연구용 태양광 발전설비를 설치한다. 올해 12월 준공될 예정이다.
+                남동발전은 이번 사업을 계기로 대학은 신재생에너지에 대한 연구와 교육에 집중하고 기업은 필요한 정보와 연구결과를 공유해 모두 Win-Win할 것으로 기대하고 있다. 또한 발생한 수익금은 대학 장학기금으로 활용돼 대학 교육복지에 적극 기여할 것으로 기대되고 있다.
+                남동발전 관계자는 “앞으로도 산학협력의 마중물이 돼 산학연구활동의 실질적 지원이 이뤄지도록 노력하겠다”고 밝혔다.
+              </p>
+              <p class="media_data_date">2019.09.18</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="media">
+      <p class="media_tit">
+        소셜 미디어 <a href=""><img src="./res/img/tms_ic_plus.png" /></a>
+      </p>
+      <div class="media_wrap">
+        <div class="media_inner">
+          <a
+            href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222492946218&categoryNo=8&parentCategoryNo=&from=thumbnailList"
+            target="_blank"
+            class="media_ctn"
+          >
+            <div class="media_data">
+              <p class="media_data_tit"></p>
+              <p class="media_data_date">2021.09.03</p>
+            </div>
+            <div class="media_ctn_gradient"></div>
+            <img class="img_h" src="./res/img/tms_media_5.png" />
+          </a>
+          <a
+            href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222483093108&categoryNo=8&parentCategoryNo=&from=thumbnailList"
+            target="_blank"
+            class="media_ctn"
+          >
+            <div class="media_data">
+              <p class="media_data_tit"></p>
+              <p class="media_data_date">2021.08.27</p>
+            </div>
+            <div class="media_ctn_gradient"></div>
+            <img class="img_h" src="./res/img/tms_media_6.png" />
+          </a>
+          <a
+            href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222480159461&categoryNo=8&parentCategoryNo=&from=thumbnailList"
+            target="_blank"
+            class="media_ctn"
+          >
+            <div class="media_data">
+              <p class="media_data_tit"></p>
+              <p class="media_data_date">2021.08.23</p>
+            </div>
+            <div class="media_ctn_gradient"></div>
+            <img class="img_h" src="./res/img/tms_media_7.png" />
+          </a>
+          <a
+            href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222431200204&categoryNo=8&parentCategoryNo=&from=thumbnailList"
+            target="_blank"
+            class="media_ctn"
+          >
+            <div class="media_data">
+              <p class="media_data_tit"></p>
+              <p class="media_data_date">2021.07.14</p>
+            </div>
+            <div class="media_ctn_gradient"></div>
+            <img class="img_h" src="./res/img/tms_media_8.png" />
+          </a>
+          <a
+            href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222243268027&categoryNo=8&parentCategoryNo=&from=thumbnailList"
+            target="_blank"
+            class="media_ctn"
+          >
+            <div class="media_data">
+              <p class="media_data_tit"></p>
+              <p class="media_data_date">2021.02.15</p>
+            </div>
+            <div class="media_ctn_gradient"></div>
+            <img class="img_h" src="./res/img/tms_media_10.png" />
+          </a>
+          <a
+            href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222227478462&categoryNo=8&parentCategoryNo=&from=thumbnailList"
+            target="_blank"
+            class="media_ctn"
+          >
+            <div class="media_data">
+              <p class="media_data_tit"></p>
+              <p class="media_data_date">2021.02.01</p>
+            </div>
+            <div class="media_ctn_gradient"></div>
+            <img class="img_h" src="./res/img/tms_media_9.png" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer_inner">
+        <div class="footer_top">
+          <a href=""><img class="logo" src="./res/img/tms_logo_white.svg" /></a>
+          <div>
+            <span class="company_info">대표이사 : 정태철</span>
+            <span class="company_info">전화 : 1833-8804</span>
+            <span class="company_info">사업자등록번호 : 353-88-01008</span>
+            <span class="company_info">E-mail : jsminrvd@gmail.com</span>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <span class="copyrt">Copyright TMSolutions Corp. All Rights Reserved.</span>
+          <div class="footer_right">
+            <div class="wrap_ft_shortcut">
+              <div class="ft_shortcut">
+                계열사 바로가기<i class="fas fa-plus"></i>
+              </div>
+              <div class="ft_shortcut_dropdown">
+                <a
+                class="ft_shortcut_energy"
+                href="https://tms-energy.co.kr/"
+                target="_blank"
+                >TMS-신재생 에너지</a
+                >
+                <a class="ft_shortcut_ansys yet">ANSYS 솔루션</a>
+                <a class="ft_shortcut_interior yet">인테리어 플랫폼</a>
+              </div>
+            </div>
+            <div class="wrap_sns">
+              <a
+              class="ic_sns-blog"
+              href="https://blog.naver.com/tms-energy"
+              target="_blank"
+              ><img src="./res/img/tms_ic_blog.png" /></a
+              ><a
+              class="ic_sns-band"
+              href="https://band.us/band/75760644"
+              target="_blank"
+              ><img src="./res/img/tms_ic_band.png"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
