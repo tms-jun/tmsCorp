@@ -74,7 +74,7 @@ setInterval(function() {
   }
 }, 2000)
 
-function updateWidth(){
+function updateWidth() {
   const currentSlides = document.querySelectorAll('.wrap_media a');
   const newSlideCount = currentSlides.length;
 
@@ -82,7 +82,7 @@ function updateWidth(){
   slides.style.width = newWidth;
 }
 
-function setInitialPos(){
+function setInitialPos() {
   const initialTranslateValue = -(slideWidth + slideMargin) * slideCount;
   slides.style.transform = `translateX(${initialTranslateValue}px)`;
 }
@@ -121,32 +121,32 @@ function moveSlide(num) {
 }
 
 // partnership slider
-var partnerLogos = document.querySelector('.wrap_logos'),
-    partnerLogo = document.querySelectorAll('.wrap_logos img'),
+var partnerSlides = document.querySelector('.wrap_logos'),
+    partnerSlide = document.querySelectorAll('.wrap_logos img'),
     partnerCurrentIdx = 0,
-    partnerSlideCount = partnerLogo.length,
+    partnerSlideCount = partnerSlide.length,
     partnerSlideWidth = 140,
     partnerSlideMargin = 80;
 
 partnerMakeClone();
 
-function partnerMakeClone() {
+function partnerMakeClone() {  
   for(var i = 0; i < partnerSlideCount; i++) {
-    var partnerCloneSlide = partnerLogo[i].cloneNode(true);
+    var partnerCloneSlide = partnerSlide[i].cloneNode(true);
     partnerCloneSlide.classList.add('clone');
-    partnerLogos.appendChild(partnerCloneSlide);
+    partnerSlides.appendChild(partnerCloneSlide);
   }
   for(var i = partnerSlideCount - 1; i>=0; i--) {
-    var partnerCloneSlide = partnerLogo[i].cloneNode(true);
+    var partnerCloneSlide = partnerSlide[i].cloneNode(true);
     partnerCloneSlide.classList.add('clone');
-    partnerLogos.prepend(partnerCloneSlide);
+    partnerSlides.prepend(partnerCloneSlide);
   }
-  
+
   partnerUpdateWidth();
   partnerSetInitialPos();
-  
+
   setTimeout(function(){
-    partnerLogos.classList.add('animated');
+    partnerSlides.classList.add('animated');
   }, 100);
 }
 
@@ -157,43 +157,34 @@ setInterval(function() {
   if(partnerCurrentIdx < partnerNewSlideCount - 1) {
     partnerMoveSlide(partnerCurrentIdx + 1);
   }
-}, 980)
+}, 2000)
 
-function partnerUpdateWidth(){
+function partnerUpdateWidth() {
   const partnerCurrentSlides = document.querySelectorAll('.wrap_logos img');
   const partnerNewSlideCount = partnerCurrentSlides.length;
 
   const partnerNewWidth = (partnerSlideWidth + partnerSlideMargin) * partnerNewSlideCount - partnerSlideMargin + 'px';
-  partnerLogos.style.width = partnerNewWidth;
+  partnerSlides.style.width = partnerNewWidth;
 }
-function partnerSetInitialPos(){
+
+function partnerSetInitialPos() {
   const initialTranslateValue = -(partnerSlideWidth + partnerSlideMargin) * partnerSlideCount;
-  partnerLogos.style.transform = `translateX(${initialTranslateValue}px)`;
+  partnerSlides.style.transform = `translateX(${initialTranslateValue}px)`;
 }
 
 function partnerMoveSlide(num) {
-  partnerLogos.style.left = -num * (partnerSlideWidth + partnerSlideMargin)+'px';
+  partnerSlides.style.left = -num * (partnerSlideWidth + partnerSlideMargin)+'px';
   partnerCurrentIdx = num;
 
-  if (partnerCurrentIdx === partnerSlideCount + 1){
+  if (partnerCurrentIdx === partnerSlideCount){
     setTimeout(function(){
-      partnerLogos.classList.remove('animated');
-      partnerLogos.style.left = '0px';
+      partnerSlides.classList.remove('animated');
+      partnerSlides.style.left = '0px';
       partnerCurrentIdx = 0;
-    }, 300);
+    }, 500);
     setTimeout(function(){
-      partnerLogos.classList.add('animated');
-    }, 310);
-  }
-  else if (partnerCurrentIdx === -1){
-    setTimeout(function(){
-      partnerLogos.classList.remove('animated');
-      partnerLogos.style.left = -(partnerSlideCount - 1) * (partnerSlideWidth + partnerSlideMargin) + 'px';
-      partnerCurrentIdx = partnerSlideCount-1;
-    }, 300);
-    setTimeout(function(){
-      partnerLogos.classList.add('animated');
-    }, 310);
+      partnerSlides.classList.add('animated');
+    }, 600);
   }
 }
 
@@ -202,13 +193,11 @@ let newsPrevBtn = document.querySelector('.news_btn-prev');
 let newsNextBtn = document.querySelector('.news_btn-next');
 let newsDatas = document.querySelectorAll('.wrap_news');
 let newsDatasCount = (newsDatas.length -1);
-console.log(newsDatasCount);
 let newsCurrentIdx = 0;
 
 newsNextBtn.addEventListener('click',function(){
   newsCurrentIdx += 1;
   nextSlide ();
-  console.log(newsCurrentIdx);
   if(newsCurrentIdx === newsDatasCount) {
     newsNextBtn.disabled = true;
     newsNextBtn.classList.add('disabled');
@@ -221,7 +210,6 @@ newsNextBtn.addEventListener('click',function(){
 newsPrevBtn.addEventListener('click', function(){
   newsCurrentIdx -= 1;
   prevSlide ();
-  console.log(newsCurrentIdx);
   if(newsCurrentIdx === 0) {
     newsPrevBtn.disabled = true;
     newsPrevBtn.classList.add('disabled');
