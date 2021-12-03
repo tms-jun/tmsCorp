@@ -592,7 +592,7 @@ table {
     align-items: center;
 }
 .wrap_logos.animated {
-    transition: left 3s ease-out;
+    transition: left 8s ease-out;
 }
 .wrap_logos img {
     width: 140px;
