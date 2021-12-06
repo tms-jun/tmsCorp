@@ -216,7 +216,7 @@ table {
     width: 32px;
     height: 32px;
     position: absolute;
-    top: 40px;
+    top: 36px;
     right: 100px;
     padding: 0;
     border: 0;
@@ -301,6 +301,9 @@ table {
     position: relative;
     width: calc(100% / 3);
 }
+.shortcut_description.mobile {
+    display: none;
+}
 .shortcut-item {
     width: 100%;
     padding: 32px;
@@ -318,7 +321,7 @@ table {
     font-family: 'omni_040';
 }
 .shortcut_description {
-    margin: 40px 0;
+    margin: 30px 0 40px;
     font-size: var(--font-micro);
 }
 .shortcut_bg {
@@ -342,13 +345,13 @@ table {
     opacity: 1;
 }
 .shortcut_bg-img.energy {
-    background: no-repeat url(../img/tms_shortcut_energy.png);
+    background: center/cover no-repeat url(../img/tms_shortcut_energy.png);
 }
 .shortcut_bg-img.ansys {
-    background: no-repeat url(../img/tms_shortcut_ansys.png);
+    background: center/cover no-repeat url(../img/tms_shortcut_ansys.png);
 }
 .shortcut_bg-img.interior {
-    background: no-repeat url(../img/tms_shortcut_interior.png);
+    background: center/cover no-repeat url(../img/tms_shortcut_interior.png);
 }
 .shortcut_bg-hover {
     width: 100%;
@@ -706,7 +709,9 @@ footer p, footer a {
 .footer_sns-band:hover {
     background: url(../img/tms_ic_band_hover.png);
 }
-
+.copyrt br {
+    display: none;
+}
 
 
 
