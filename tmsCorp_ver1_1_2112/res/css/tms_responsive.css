@@ -762,6 +762,11 @@
     #ourStory .news_data {
         display: none;
     }
+    .business_part-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 400px) {
