@@ -23,7 +23,8 @@
     <title>TMS Corporation</title>
   </head>
 
-  <body>
+  <body id="ourServices">
+    <button class="btn_arrow-up"><img src="./res/img/tms_ic_arrow_white.png" alt="next"></button>
     <header class="subpage">
       <div class="header_inner">
         <div class="navbar">
@@ -32,7 +33,7 @@
             <ul class="navbar_menu">
               <li class="navbar_menu-item"><a href="./tmsolutions.html">티엠솔루션스</a></li>
               <li class="navbar_menu-item"><a href="./ourServices.html" class="selected">사업분야</a></li>
-              <li class="navbar_menu-item" onclick="yet()"><a href="" >미디어</a></li>
+              <li class="navbar_menu-item"><a href="./ourStory.html">미디어</a></li>
             </ul>
             <!-- s: toggle button -->
             <button class="navbar_toggle"><i class="fas fa-bars"></i></button>
@@ -43,7 +44,8 @@
           <div class="slogan_inner">
             <img src="./res/img/tms_ic_triangle.png">
             <p>티엠솔루션스의</p>
-            <p>핵심사업 부문을 소개합니다.</p>
+            <p>핵심사업 부문을<br class="slogan_br ourServices"> 소개합니다.</p>
+            <p class="slogan-bold fc-red">Our Services</p>
           </div>
         </div>
       </div>
@@ -61,98 +63,64 @@
       </div>
     </header>
 
-    <section id="business_part">
+    <section>
       <div class="section_inner">
         <div class="business_part_container">
-          <div class="wrap_business_part">
-            <div class="business_part-img">
-              <img src="./res/img/tms_business_part_energy.jpg">
-            </div>
-            <div class="business_part-text">
-              <div class="business_part-deco"></div> 
-              <p class="business_part_tit">TMS-신재생 에너지</p>
-              <p class="business_part_sub_tit">1:1 맞춤형 태양광 비즈니스 플랫폼</p>
-              <p class="business_part_description">
-                ‘TMS-Energy’는 비효율을 과감히 덜어내어 비용누수를 방지하고 
-                다년간의 공학지식과 비즈니스 노하우를 바탕으로 효율적인 설계부터 
-                시공, 금융, 유지보수 까지 원스톱 솔루션의 핵심 원칙 E-Solar(Efficient Solar)를 지향합니다.
-              </p>
-              <div class="wrap_business_part_button">
-                <a href="https://tms-energy.co.kr/" target="_blank">
-                  <button class="business_part_enter_site">
-                    <svg>
-                      <path class="st0" d="M1,6.2h20c0.6,0,1,0.4,1,1s-0.4,1-1,1H1c-0.6,0-1-0.4-1-1S0.4,6.2,1,6.2z"/>
-                      <path class="st0" d="M14.1,0.3c0.4-0.4,1-0.4,1.4,0l6.1,6.1c0.4,0.4,0.4,1,0,1.4c-0.4,0.4-1,0.4-1.4,0l-6.1-6.1
-                        C13.7,1.3,13.7,0.7,14.1,0.3z"/>
-                      <path class="st0" d="M14.1,12.8l6.1-6.1c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4l-6.1,6.1c-0.4,0.4-1,0.4-1.4,0
-                        C13.7,13.8,13.7,13.2,14.1,12.8z"/>
-                    </svg>
-                  </button>
-                  <span>사이트로 이동</span>
-                </a>
-              </div>
-            </div>
+          <div class="business_part-img">
+            <img src="./res/img/tms_business_part_energy.jpg">
           </div>
           <div class="wrap_business_part">
-            <div class="business_part-img">
-              <img src="./res/img/tms_business_part_ansys.jpg">
-            </div>
-            <div class="business_part-text">
-              <div class="business_part-deco"></div> 
-              <p class="business_part_tit">ANSYS 솔루션</p>
-              <p class="business_part_sub_tit">구조해석 · 열유체해석 · 전자기장해석의 No.1 솔루션</p>
-              <p class="business_part_description">
-                ANSYS솔루션은 CAE(Computer Aided Engineering)를 활용한
-                설계 검증 사업군의 최첨단 디지털 엔지니어링 솔루션으로
+            <div class="business_part-deco"></div> 
+            <p class="business_part_tit">TMS-신재생 에너지</p>
+            <p class="business_part_sub_tit">1:1 맞춤형<br class="bp_br_third"> 태양광 비즈니스 플랫폼</p>
+            <p class="business_part_description">
+              ‘TMS-Energy’는 비효율을 과감히 덜어내어 비용누수를 방지하고<br> 
+              다년간의 공학지식과 비즈니스 노하우를 바탕으로 효율적인 설계부터
+              시공, 금융, 유지보수 까지 원스톱 솔루션의 핵심 원칙 E-Solar(Efficient Solar)를 지향합니다.
+            </p>
+            <a class="business_part-hover" href="">
+              <p>사이트로 이동 <img src="./res/img/tms_ic_arrow_long_red.png"></p>
+            </a>
+          </div>
+        </div>
+        <div class="business_part_container">
+          <div class="business_part-img">
+            <img src="./res/img/tms_business_part_ansys.jpg">
+          </div>
+          <div class="wrap_business_part">
+            <div class="business_part-deco"></div> 
+            <p class="business_part_tit">ANSYS 솔루션</p>
+            <p class="business_part_sub_tit">구조해석 · 열유체해석<br class="bp_br_secondary"> · 전자기장해석의<br class="bp_br_first"> No.1 솔루션</p>
+            <p class="business_part_description">
+              ANSYS솔루션은 CAE(Computer Aided Engineering)를 활용한<br> 
+                설계 검증 사업군의 최첨단 디지털 엔지니어링 솔루션으로<br> 
                 전체 제조 공정에서 필수 요소로 자리잡고 있습니다.<br>
-                다중 물리 CAE소프트웨어의 글로벌 1위 프로그램인 ANSYS는 
+                다중 물리 CAE소프트웨어의 글로벌 1위 프로그램인 ANSYS는<br> 
                 전자계/열/구조/진동에 이르는 모든 분야에서 엔지니어가 목적에 따라 유연하게
                 분석 및 설계 검증을 할 수 있도록 지원합니다.
-              </p>
-              <div class="wrap_business_part_button">
-                <a href="" onclick="yet()">
-                  <button class="business_part_enter_site">
-                    <svg>
-                      <path class="st0" d="M1,6.2h20c0.6,0,1,0.4,1,1s-0.4,1-1,1H1c-0.6,0-1-0.4-1-1S0.4,6.2,1,6.2z"/>
-                      <path class="st0" d="M14.1,0.3c0.4-0.4,1-0.4,1.4,0l6.1,6.1c0.4,0.4,0.4,1,0,1.4c-0.4,0.4-1,0.4-1.4,0l-6.1-6.1
-                        C13.7,1.3,13.7,0.7,14.1,0.3z"/>
-                      <path class="st0" d="M14.1,12.8l6.1-6.1c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4l-6.1,6.1c-0.4,0.4-1,0.4-1.4,0
-                        C13.7,13.8,13.7,13.2,14.1,12.8z"/>
-                    </svg>
-                  </button>
-                  <span>사이트로 이동</span>
-                </a>
-              </div>
-            </div>
+            </p>
+            <a class="business_part-hover" href="">
+              <p>사이트로 이동 <img src="./res/img/tms_ic_arrow_long_red.png"></p>
+            </a>
+          </div>
+        </div>
+        <div class="business_part_container">
+          <div class="business_part-img">
+            <img src="./res/img/tms_business_part_interior.jpg">
           </div>
           <div class="wrap_business_part">
-            <div class="business_part-img">
-              <img src="./res/img/tms_business_part_interior.jpg">
-            </div>
-            <div class="business_part-text">
-              <div class="business_part-deco"></div> 
-              <p class="business_part_tit">인테리어 플랫폼</p>
-              <p class="business_part_sub_tit">아름다운 공간설계의 시작 '브리드홈'</p>
-              <p class="business_part_description">
-                '브리드홈'은 주거 형태의 다양성과 각 라이프스트일에 맞춘 주거환경을 설계하며,
-                인테리어 디자인부터 시공까지 하이-브리드 원스톱 서비스를 제공합니다.
-              </p>
-              <div class="wrap_business_part_button">
-                <a href="" onclick="yet()">
-                  <button class="business_part_enter_site">
-                    <svg>
-                      <path class="st0" d="M1,6.2h20c0.6,0,1,0.4,1,1s-0.4,1-1,1H1c-0.6,0-1-0.4-1-1S0.4,6.2,1,6.2z"/>
-                      <path class="st0" d="M14.1,0.3c0.4-0.4,1-0.4,1.4,0l6.1,6.1c0.4,0.4,0.4,1,0,1.4c-0.4,0.4-1,0.4-1.4,0l-6.1-6.1
-                        C13.7,1.3,13.7,0.7,14.1,0.3z"/>
-                      <path class="st0" d="M14.1,12.8l6.1-6.1c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4l-6.1,6.1c-0.4,0.4-1,0.4-1.4,0
-                        C13.7,13.8,13.7,13.2,14.1,12.8z"/>
-                    </svg>
-                  </button>
-                  <span>사이트로 이동</span>
-                </a>
-              </div>
-            </div>
+            <div class="business_part-deco"></div> 
+            <p class="business_part_tit">인테리어 플랫폼</p>
+            <p class="business_part_sub_tit">아름다운 공간설계의 시작<br class="bp_br_third"> '브리드홈'</p>
+            <p class="business_part_description">
+              '브리드홈'은 주거 형태의 다양성과 각 라이프스트일에 맞춘 주거환경을 설계하며,
+              인테리어 디자인부터 시공까지 하이-브리드 원스톱 서비스를 제공합니다.
+            </p>
+            <a class="business_part-hover" href="">
+              <p>사이트로 이동 <img src="./res/img/tms_ic_arrow_long_red.png"></p>
+            </a>
           </div>
+        </div>
         </div>
       </div>
     </section>

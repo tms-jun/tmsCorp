@@ -21,9 +21,224 @@
     <link rel="stylesheet" href="./res/css/tms_common.css">
     <link rel="stylesheet" href="./res/css/tms_responsive.css">
     <title>TMS Corporation</title>
+
+    <script>
+      window.onload = function(){
+        // media slider
+          var slides = document.querySelector('#media .wrap_media'),
+              slide = document.querySelectorAll('#media .wrap_media a'),
+              currentIdx = 0,
+              slideCount = slide.length,
+              prevBtn = document.querySelector('#media .media_btn-prev'),
+              nextBtn = document.querySelector('#media .media_btn-next'),
+              slideWidth = 238,
+              slideMargin = 24;
+  
+          makeClone();
+  
+          function makeClone() {  
+            for(var i = 0; i < slideCount; i++) {
+              var cloneSlide = slide[i].cloneNode(true);
+              cloneSlide.classList.add('clone');
+              slides.appendChild(cloneSlide);
+            }
+            for(var i = slideCount - 1; i>=0; i--) {
+              var cloneSlide = slide[i].cloneNode(true);
+              cloneSlide.classList.add('clone');
+              slides.prepend(cloneSlide);
+            }
+  
+            updateWidth();
+            setInitialPos();
+  
+            setTimeout(function(){
+              slides.classList.add('animated');
+            }, 100);
+          }
+  
+          setInterval(function() {
+            const currentSlides = document.querySelectorAll('#media .wrap_media a');
+            const newSlideCount = currentSlides.length;
+  
+            if(currentIdx < newSlideCount - 1) {
+              moveSlide(currentIdx + 1);
+            }
+          }, 2000)
+  
+          function updateWidth() {
+            const currentSlides = document.querySelectorAll('#media .wrap_media a');
+            const newSlideCount = currentSlides.length;
+  
+            const newWidth = (slideWidth + slideMargin) * newSlideCount - slideMargin + 'px';
+            slides.style.width = newWidth;
+          }
+  
+          function setInitialPos() {
+            const initialTranslateValue = -(slideWidth + slideMargin) * slideCount;
+            slides.style.transform = `translateX(${initialTranslateValue}px)`;
+          }
+  
+          nextBtn.addEventListener('click',function(){
+            moveSlide(currentIdx + 1);
+          });
+          prevBtn.addEventListener('click', function(){
+            moveSlide(currentIdx - 1);
+          });
+  
+          function moveSlide(num) {
+            slides.style.left = -num * (slideWidth + slideMargin)+'px';
+            currentIdx = num;
+  
+            if (currentIdx === slideCount){
+              setTimeout(function(){
+                slides.classList.remove('animated');
+                slides.style.left = '0px';
+                currentIdx = 0;
+              }, 500);
+              setTimeout(function(){
+                slides.classList.add('animated');
+              }, 600);
+            }
+            else if (currentIdx === -1){
+              setTimeout(function(){
+                slides.classList.remove('animated');
+                slides.style.left = -(slideCount - 1) * (slideWidth + slideMargin) + 'px';
+                currentIdx = slideCount-1;
+              }, 500);
+              setTimeout(function(){
+                slides.classList.add('animated');
+              }, 600);
+            }
+          }
+  
+          // partnership slider
+          var partnerSlides = document.querySelector('.wrap_logos'),
+              partnerSlide = document.querySelectorAll('.wrap_logos img'),
+              partnerCurrentIdx = 0,
+              partnerSlideCount = partnerSlide.length,
+              partnerSlideWidth = 140,
+              partnerSlideMargin = 80;
+  
+          partnerMakeClone();
+  
+          function partnerMakeClone() {  
+            for(var i = 0; i < partnerSlideCount; i++) {
+              var partnerCloneSlide = partnerSlide[i].cloneNode(true);
+              partnerCloneSlide.classList.add('clone');
+              partnerSlides.appendChild(partnerCloneSlide);
+            }
+            for(var i = partnerSlideCount - 1; i>=0; i--) {
+              var partnerCloneSlide = partnerSlide[i].cloneNode(true);
+              partnerCloneSlide.classList.add('clone');
+              partnerSlides.prepend(partnerCloneSlide);
+            }
+  
+            partnerUpdateWidth();
+            partnerSetInitialPos();
+  
+            setTimeout(function(){
+              partnerSlides.classList.add('animated');
+            }, 100);
+          }
+  
+          setInterval(function() {
+            const partnerCurrentSlides = document.querySelectorAll('.wrap_logos img');
+            const partnerNewSlideCount = partnerCurrentSlides.length;
+  
+            if(partnerCurrentIdx < partnerNewSlideCount - 1) {
+              partnerMoveSlide(partnerCurrentIdx + 1);
+            }
+          }, 2000)
+  
+          function partnerUpdateWidth() {
+            const partnerCurrentSlides = document.querySelectorAll('.wrap_logos img');
+            const partnerNewSlideCount = partnerCurrentSlides.length;
+  
+            const partnerNewWidth = (partnerSlideWidth + partnerSlideMargin) * partnerNewSlideCount - partnerSlideMargin + 'px';
+            partnerSlides.style.width = partnerNewWidth;
+          }
+  
+          function partnerSetInitialPos() {
+            const initialTranslateValue = -(partnerSlideWidth + partnerSlideMargin) * partnerSlideCount;
+            partnerSlides.style.transform = `translateX(${initialTranslateValue}px)`;
+          }
+  
+          function partnerMoveSlide(num) {
+            partnerSlides.style.left = -num * (partnerSlideWidth + partnerSlideMargin)+'px';
+            partnerCurrentIdx = num;
+  
+            if (partnerCurrentIdx === partnerSlideCount){
+              setTimeout(function(){
+                partnerSlides.classList.remove('animated');
+                partnerSlides.style.left = '0px';
+                partnerCurrentIdx = 0;
+              }, 500);
+              setTimeout(function(){
+                partnerSlides.classList.add('animated');
+              }, 600);
+            }
+          }
+  
+          // news slider
+          let newsPrevBtn = document.querySelector('.news_btn-prev');
+          let newsNextBtn = document.querySelector('.news_btn-next');
+          let newsDatas = document.querySelectorAll('.wrap_news');
+          let newsDatasCount = (newsDatas.length -1);
+          let newsCurrentIdx = 0;
+  
+          newsNextBtn.addEventListener('click',function(){
+            newsCurrentIdx += 1;
+            nextSlide ();
+            if(newsCurrentIdx === newsDatasCount) {
+              newsNextBtn.disabled = true;
+              newsNextBtn.classList.add('disabled');
+            }
+            if(newsCurrentIdx > 0) {
+              newsPrevBtn.disabled = false;
+              newsPrevBtn.classList.remove('disabled');
+            }
+          });
+          newsPrevBtn.addEventListener('click', function(){
+            newsCurrentIdx -= 1;
+            prevSlide ();
+            if(newsCurrentIdx === 0) {
+              newsPrevBtn.disabled = true;
+              newsPrevBtn.classList.add('disabled');
+            }
+            if(newsCurrentIdx < newsDatasCount) {
+              newsNextBtn.disabled = false;
+              newsNextBtn.classList.remove('disabled');
+            }
+          });
+  
+          const showingClass = 'showing';
+          const newsFirstSlide = document.querySelector('.wrap_news:first-child');
+          function nextSlide () {
+            const newsCurrentSlide = document.querySelector(`.${showingClass}`);
+            if(newsCurrentSlide) {
+              newsCurrentSlide.classList.remove(showingClass);
+              const nextSlide = newsCurrentSlide.nextElementSibling;
+              if(nextSlide) {
+                nextSlide.classList.add(showingClass);
+              }
+            }
+          }
+          function prevSlide () {
+            const newsCurrentSlide = document.querySelector(`.${showingClass}`);
+            if(newsCurrentSlide) {
+              newsCurrentSlide.classList.remove(showingClass);
+              const prevSlide = newsCurrentSlide.previousElementSibling;
+              if(prevSlide) {
+                prevSlide.classList.add(showingClass);
+              }
+            }
+          }
+      }
+    </script>
   </head>
 
   <body>
+    <button class="btn_arrow-up"><img src="./res/img/tms_ic_arrow_white.png" alt="next"></button>
     <header>
       <div class="header_inner">
         <div class="navbar">
@@ -32,7 +247,7 @@
             <ul class="navbar_menu">
               <li class="navbar_menu-item"><a href="./tmsolutions.html">티엠솔루션스</a></li>
               <li class="navbar_menu-item"><a href="./ourServices.html">사업분야</a></li>
-              <li class="navbar_menu-item" onclick="yet()"><a href="" >미디어</a></li>
+              <li class="navbar_menu-item"><a href="./ourStory.html">미디어</a></li>
             </ul>
             <!-- s: toggle button -->
             <button class="navbar_toggle"><i class="fas fa-bars"></i></button>
@@ -152,6 +367,26 @@
           </div>
           <div class="wrap_news">
             <div class="wrap_news_img">
+              <img class="news_img" src="./res/img/tms_new_4.jpg" />
+            </div>
+            <a class="wrap_news_item" href="https://www.e2news.com/news/articleView.html?idxno=224388" target="_blank">
+              <div class="news_item-hover">
+                <p>뉴스 확인하기 <img src="./res/img/tms_ic_arrow_long_white.png"></p>
+              </div>
+              <div class="news_item">
+                <p class="news_categories fc-red">TMS-신재생 에너지</p>
+                <p class="news_tit">남동발전, 한양대 에리카캠퍼스에 ‘대학 4호 써니 플랜트’ 준공</p>
+                <p class="news_data">
+                  [이투뉴스] 한국남동발전(KOEN. 사장 유향열)과 태양광 설비업체들이 안산 한양대 에리카 캠퍼스 건물 옥상에 100kW 태양광을 기증했다.
+                  남동발전은 17일 한양대 에리카 캠퍼스에서 배영진 신사업본부장, 양내원 한양대 부총장, 태양광설비 업체 관계자 등이 참석한 가운데 '써니플랜트(Sunny Plant)' 태양광설비 준공식을 가졌다.
+                  이번 써니플랜트에는 탑선, 윌링스, 티엠솔류션스 등 태양광 업체가 기자재를 무상 기부했고 남동발전이 설치공사비를 지원했다. 에리카 캠퍼스 언론정보관건물 옥상에 100kW급 태양광을 설치해 그린캠퍼스를 조성하고 수익금을 장학재원 활용할 계획이다.
+                  </p>
+                <p class="news_date">2020-07-19</p>
+              </div>
+            </a>
+          </div>
+          <div class="wrap_news">
+            <div class="wrap_news_img">
               <img class="news_img" src="./res/img/tms_new_2.jpg" />
             </div>
             <a class="wrap_news_item" href="https://www.snmnews.com/news/articleView.html?idxno=460344" target="_blank">
@@ -208,60 +443,69 @@
         </div>
         <div class="media_container">
           <button class="media_btn media_btn-prev"><img src="./res/img/tms_ic_arrow_white.png" alt="prev"></button>
-          <div class="wrap_media">
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222585203870&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+            <div class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222589409080&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
+              <img src="./res/img/img_media/tms_img_media_211208.png" />
+              </a>
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222588119941&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
+                <img src="./res/img/img_media/tms_img_media_211206.png" />
+              </a>
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222585203870&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211203.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222579287269&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222579287269&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211126.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222577196548&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222577196548&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211124.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222574767563&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222574767563&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211122.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222572765061&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222572765061&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211119.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222565276009&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222565276009&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211112.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222563293704&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222563293704&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211109.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222555441551&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222555441551&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211101.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222552270960&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222552270960&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211029.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222547511305&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222547511305&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211025.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222544139574&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222544139574&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211022.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222540651452&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222540651452&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211018.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222537748191&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222537748191&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211015.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222528676288&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222528676288&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211006.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222523043712&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222523043712&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_211001.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222515262616&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222515262616&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_210924.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222508267004&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222508267004&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_210917.png" />
               </a>
-              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222502839329&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank" class="wrap_media">
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222502839329&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
                 <img src="./res/img/img_media/tms_img_media_210913.png" />
+              </a>
+              <a href="https://blog.naver.com/PostView.naver?blogId=tms-energy&logNo=222492946218&categoryNo=8&parentCategoryNo=&from=thumbnailList" target="_blank">
+                <img src="./res/img/img_media/tms_img_media_210903.png" />
               </a>
           </div>
           <button class="media_btn media_btn-next"><img src="./res/img/tms_ic_arrow_white.png" alt="next"></button>
