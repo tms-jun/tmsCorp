@@ -68,7 +68,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                 <div class="gall_box">
                     <div class="gall_con">
                         <div class="gall_img">
-                            <a href="<?php echo $list[$i]['href'] ?>">
+                            <!-- <a href="<?php echo $list[$i]['href'] ?>"> -->
+                            <?php if ($is_admin) {  ?>
+                                <a href="<?php echo $list[$i]['href'] ?>">
+                            <?php } else { ?>
+                                <a href="<?php echo $list[$i]['wr_link1']?>" target="_blank">
+                            <?php } ?>
+                            
                             <?php
                             if ($list[$i]['is_notice']) { // 공지사항  ?>
                                 <span class="is_notice" style="<?php echo $line_height_style; ?>">공지</span>

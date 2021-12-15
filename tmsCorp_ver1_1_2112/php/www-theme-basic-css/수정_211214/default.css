@@ -428,6 +428,7 @@ box-shadow:2px 2px 3px 0px rgba(0,0,0,0.2)}
   vertical-align:middle;
   background:#eee;
   border:1px solid #eee;
+  box-sizing: border-box;
 }
 
 .pg a:focus, .pg a:hover {text-decoration:none}
