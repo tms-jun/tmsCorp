@@ -256,7 +256,6 @@
     .business_part_container:not(:last-child) {
         margin-bottom: 60px;
     }
-
     .business_part_sub_tit {
         line-height: 1.6rem;
     }
@@ -331,6 +330,10 @@
     .business_part-img img {
         width: unset;
         height: 100%;
+    }
+    
+    .business_part-img img.interior {
+        transform: scale(1);
     }
 }
 @media screen and (max-width: 768px) {
@@ -642,6 +645,10 @@
         width: unset;
         height: 100%;
     }
+    
+    .business_part-img img.interior {
+        transform: scale(1.2);
+    }
 }
 
 @media screen and (max-width: 460px) {
@@ -761,11 +768,6 @@
     }
     #ourStory .news_data {
         display: none;
-    }
-    .business_part-img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 }
 
